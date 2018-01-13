@@ -1,6 +1,6 @@
 /* rsa.h
  *
- * Copyright (C) 2006-2016 wolfSSL Inc.
+ * Copyright (C) 2006-2017 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -26,6 +26,13 @@
 #include <wolfssl/wolfcrypt/types.h>
 
 #ifndef NO_RSA
+
+
+/* RSA default exponent */
+#ifndef WC_RSA_EXPONENT
+    #define WC_RSA_EXPONENT 65537L
+#endif
+
 
 /* allow for user to plug in own crypto */
 #if !defined(HAVE_FIPS) && (defined(HAVE_USER_RSA) || defined(HAVE_FAST_RSA))
@@ -84,10 +91,11 @@ enum {
 
     RSA_PSS_PAD_SZ = 8,
 
+#ifdef OPENSSL_EXTRA
     RSA_PKCS1_PADDING_SIZE = 11,
     RSA_PKCS1_OAEP_PADDING_SIZE = 42 /* (2 * hashlen(SHA-1)) + 2 */
+  #endif
 };
-
 
 /* RSA */
 struct RsaKey {
@@ -142,6 +150,10 @@ WOLFSSL_API int  wc_RsaSSL_Sign(const byte* in, word32 inLen, byte* out,
 WOLFSSL_API int  wc_RsaPSS_Sign(const byte* in, word32 inLen, byte* out,
                                 word32 outLen, enum wc_HashType hash, int mgf,
                                 RsaKey* key, WC_RNG* rng);
+WOLFSSL_API int  wc_RsaPSS_Sign_ex(const byte* in, word32 inLen, byte* out,
+                                   word32 outLen, enum wc_HashType hash,
+                                   int mgf, int saltLen, RsaKey* key,
+                                   WC_RNG* rng);
 WOLFSSL_API int  wc_RsaSSL_VerifyInline(byte* in, word32 inLen, byte** out,
                                     RsaKey* key);
 WOLFSSL_API int  wc_RsaSSL_Verify(const byte* in, word32 inLen, byte* out,
@@ -149,9 +161,22 @@ WOLFSSL_API int  wc_RsaSSL_Verify(const byte* in, word32 inLen, byte* out,
 WOLFSSL_API int  wc_RsaPSS_VerifyInline(byte* in, word32 inLen, byte** out,
                                         enum wc_HashType hash, int mgf,
                                         RsaKey* key);
+WOLFSSL_API int  wc_RsaPSS_VerifyInline_ex(byte* in, word32 inLen, byte** out,
+                                           enum wc_HashType hash, int mgf,
+                                           int saltLen, RsaKey* key);
+WOLFSSL_API int  wc_RsaPSS_Verify(byte* in, word32 inLen, byte* out,
+                                  word32 outLen, enum wc_HashType hash, int mgf,
+                                  RsaKey* key);
+WOLFSSL_API int  wc_RsaPSS_Verify_ex(byte* in, word32 inLen, byte* out,
+                                     word32 outLen, enum wc_HashType hash,
+                                     int mgf, int saltLen, RsaKey* key);
 WOLFSSL_API int  wc_RsaPSS_CheckPadding(const byte* in, word32 inLen, byte* sig,
                                         word32 sigSz,
                                         enum wc_HashType hashType);
+WOLFSSL_API int  wc_RsaPSS_CheckPadding_ex(const byte* in, word32 inLen,
+                                           byte* sig, word32 sigSz,
+                                           enum wc_HashType hashType,
+                                           int saltLen);
 
 WOLFSSL_API int  wc_RsaEncryptSize(RsaKey* key);
 

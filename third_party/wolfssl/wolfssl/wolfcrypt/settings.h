@@ -1,6 +1,6 @@
 /* settings.h
  *
- * Copyright (C) 2006-2016 wolfSSL Inc.
+ * Copyright (C) 2006-2017 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -30,7 +30,15 @@
 #ifdef __cplusplus
     extern "C" {
 #endif
-
+#define WC_RSA_BLINDING
+#define OPENSSL_EXTRA
+#define WOLFSSL_RIPEMD
+#define WOLFSSL_SHA512
+#define NO_PSK
+#define HAVE_EXTENDED_MASTER
+#define WOLFSSL_SNIFFER
+#define HAVE_TLS_EXTENSIONS
+#define HAVE_SECURE_RENEGOTIATION
 /* Uncomment next line if using IPHONE */
 /* #define IPHONE */
 
@@ -442,6 +450,11 @@
     #define USE_CERT_BUFFERS_2048
 #endif
 
+#ifdef WOLFSSL_CHIBIOS
+    /* ChibiOS definitions. This file is distributed with chibiOS. */
+    #include "wolfssl_chibios.h"
+#endif
+
 #ifdef WOLFSSL_NRF5x
         #define SIZEOF_LONG 4
         #define SIZEOF_LONG_LONG 8
@@ -591,6 +604,8 @@ extern void uITRON4_free(void *p) ;
     #define NO_WOLFSSL_DIR
     #define USE_FAST_MATH
     #define TFM_TIMING_RESISTANT
+    #define ECC_TIMING_RESISTANT
+    #define WC_RSA_BLINDING
     #define NO_DEV_RANDOM
     #define NO_FILESYSTEM
     #define USE_CERT_BUFFERS_2048
@@ -598,6 +613,7 @@ extern void uITRON4_free(void *p) ;
     #define USER_TIME
     #define HAVE_ECC
     #define HAVE_ALPN
+    #define USE_WOLF_STRTOK /* use with HAVE_ALPN */
     #define HAVE_TLS_EXTENSIONS
     #define HAVE_AESGCM
     #define HAVE_SUPPORTED_CURVES
@@ -1175,6 +1191,27 @@ extern void uITRON4_free(void *p) ;
     #endif
 #endif /*(WOLFSSL_XILINX_CRYPT)*/
 
+#ifdef WOLFSSL_IMX6
+    #ifndef SIZEOF_LONG_LONG
+        #define SIZEOF_LONG_LONG 8
+    #endif
+#endif
+
+/* if defined turn on all CAAM support */
+#ifdef WOLFSSL_IMX6_CAAM
+    #undef  WOLFSSL_IMX6_CAAM_RNG
+    #define WOLFSSL_IMX6_CAAM_RNG
+
+    #undef  WOLFSSL_IMX6_CAAM_BLOB
+    #define WOLFSSL_IMX6_CAAM_BLOB
+
+#if defined(HAVE_AESGCM) || defined(WOLFSSL_AES_XTS)
+    /* large performance gain with HAVE_AES_ECB defined */
+    #undef HAVE_AES_ECB
+    #define HAVE_AES_ECB
+#endif
+#endif
+
 #if !defined(XMALLOC_USER) && !defined(MICRIUM_MALLOC) && \
     !defined(WOLFSSL_LEANPSK) && !defined(NO_WOLFSSL_MEMORY) && \
     !defined(XMALLOC_OVERRIDE)
@@ -1490,6 +1527,9 @@ extern void uITRON4_free(void *p) ;
 #endif
 
 #ifdef HAVE_PKCS7
+    #if defined(NO_AES) && defined(NO_DES3)
+        #error PKCS7 needs either AES or 3DES enabled, please enable one
+    #endif
     #ifndef HAVE_AES_KEYWRAP
         #error PKCS7 requires AES key wrap please define HAVE_AES_KEYWRAP
     #endif

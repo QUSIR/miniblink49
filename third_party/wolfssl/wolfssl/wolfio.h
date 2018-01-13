@@ -1,6 +1,6 @@
 /* io.h
  *
- * Copyright (C) 2006-2016 wolfSSL Inc.
+ * Copyright (C) 2006-2017 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -345,7 +345,7 @@ WOLFSSL_API  int wolfIO_Recv(SOCKET_T sd, char *buf, int sz, int rdFlags);
     WOLFSSL_API  int wolfIO_HttpBuildRequest(const char* reqType,
         const char* domainName, const char* path, int pathLen, int reqSz,
         const char* contentType, unsigned char* buf, int bufSize);
-    WOLFSSL_API  int wolfIO_HttpProcessResponse(int sfd, const char* appStr,
+    WOLFSSL_API  int wolfIO_HttpProcessResponse(int sfd, const char** appStrList,
         unsigned char** respBuf, unsigned char* httpBuf, int httpBufSz,
         int dynType, void* heap);
 #endif /* HAVE_HTTP_CLIENT */
@@ -406,9 +406,17 @@ WOLFSSL_API void wolfSSL_SetIOWriteFlags(WOLFSSL* ssl, int flags);
 
 #ifndef XINET_NTOP
     #define XINET_NTOP(a,b,c,d) inet_ntop((a),(b),(c),(d))
+    #ifdef USE_WINDOWS_API /* Windows-friendly definition */
+        #undef  XINET_NTOP
+        #define XINET_NTOP(a,b,c,d) InetNtop((a),(b),(c),(d))
+    #endif
 #endif
 #ifndef XINET_PTON
     #define XINET_PTON(a,b,c)   inet_pton((a),(b),(c))
+    #ifdef USE_WINDOWS_API /* Windows-friendly definition */
+        #undef  XINET_PTON
+        #define XINET_PTON(a,b,c)   InetPton((a),(b),(c))
+    #endif
 #endif
 #ifndef XHTONS
     #define XHTONS(a) htons((a))

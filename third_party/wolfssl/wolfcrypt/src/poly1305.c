@@ -1,6 +1,6 @@
 /* poly1305.c
  *
- * Copyright (C) 2006-2016 wolfSSL Inc.
+ * Copyright (C) 2006-2017 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -61,6 +61,8 @@
     #if defined(__clang__) && ((__clang_major__ < 3) || \
                                (__clang_major__ == 3 && __clang_minor__ <= 5))
         #define NO_AVX2_SUPPORT
+    #elif defined(__clang__) && defined(NO_AVX2_SUPPORT)
+        #undef NO_AVX2_SUPPORT
     #endif
 
     #define HAVE_INTEL_AVX1
@@ -142,10 +144,10 @@ static void poly1305_block_avx(Poly1305* ctx, const unsigned char *m)
             "addq	%%rax, %%r12\n\t"
             "movq	%%r15, %%rax\n\t"
             "adcq	%%rdx, %%r13\n\t"
-            "# r[0] * h[0] => rdx, rax +=> t1, t0\n\t"
+            "# r[0] * h[0] => rdx, rax ==> t4, t0\n\t"
             "mulq	%%r8\n\t"
-            "movq	%%rdx, %%r8\n\t"
             "movq	%%rax, %%r11\n\t"
+            "movq	%%rdx, %%r8\n\t"
             "# r[1] * h[1] => rdx, rax =+> t3, t2\n\t"
             "movq	8(%[ctx]), %%rax\n\t"
             "mulq	%%r9\n\t"
@@ -209,10 +211,10 @@ POLY1305_NOINLINE static void poly1305_blocks_avx(Poly1305* ctx,
             "addq	%%rax, %%r12\n\t"
             "movq	%%r15, %%rax\n\t"
             "adcq	%%rdx, %%r13\n\t"
-            "# r[0] * h[0] => rdx, rax +=> t1, t0\n\t"
+            "# r[0] * h[0] => rdx, rax ==> t4, t0\n\t"
             "mulq	%%r8\n\t"
-            "movq	%%rdx, %%r8\n\t"
             "movq	%%rax, %%r11\n\t"
+            "movq	%%rdx, %%r8\n\t"
             "# r[1] * h[1] => rdx, rax =+> t3, t2\n\t"
             "movq	8(%[ctx]), %%rax\n\t"
             "mulq	%%r9\n\t"
@@ -922,7 +924,7 @@ POLY1305_NOINLINE static void poly1305_blocks_avx2(Poly1305* ctx,
     r[2] = (word32)( r1 >> 8               ) & 0x3ffffff; \
     r[3] = (word32)((r1 >> 34) | (r2 << 10)) & 0x3ffffff; \
     r[4] = (word32)( r2 >> 16              )
-  
+
 
 static void poly1305_setkey_avx2(Poly1305* ctx, const byte* key)
 {

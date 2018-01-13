@@ -1,6 +1,6 @@
 /* pkcs7.c
  *
- * Copyright (C) 2006-2016 wolfSSL Inc.
+ * Copyright (C) 2006-2017 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -73,8 +73,11 @@ static int wc_SetContentType(int pkcs7TypeOID, byte* output)
                                                0x0D, 0x01, 0x07, 0x04 };
     const byte digestedData[]       = { 0x2A, 0x86, 0x48, 0x86, 0xF7,
                                                0x0D, 0x01, 0x07, 0x05 };
+
+#ifndef NO_PKCS7_ENCRYPTED_DATA
     const byte encryptedData[]      = { 0x2A, 0x86, 0x48, 0x86, 0xF7,
                                                0x0D, 0x01, 0x07, 0x06 };
+#endif
 
     int idSz;
     int typeSz = 0, idx = 0;
@@ -112,10 +115,12 @@ static int wc_SetContentType(int pkcs7TypeOID, byte* output)
             typeName = digestedData;
             break;
 
+#ifndef NO_PKCS7_ENCRYPTED_DATA
         case ENCRYPTED_DATA:
             typeSz = sizeof(encryptedData);
             typeName = encryptedData;
             break;
+#endif
 
         default:
             WOLFSSL_MSG("Unknown PKCS#7 Type");
@@ -382,7 +387,7 @@ typedef struct ESD {
     enum wc_HashType hashType;
     byte contentDigest[WC_MAX_DIGEST_SIZE + 2]; /* content only + ASN.1 heading */
     byte contentAttribsDigest[WC_MAX_DIGEST_SIZE];
-    byte encContentDigest[512];
+    byte encContentDigest[MAX_ENCRYPTED_KEY_SZ];
 
     byte outerSeq[MAX_SEQ_SZ];
         byte outerContent[MAX_EXP_SZ];
@@ -614,8 +619,8 @@ static int wc_PKCS7_BuildSignedAttributes(PKCS7* pkcs7, ESD* esd,
 }
 
 
-/* gets correct encryption algo ID for SignedData, either RSAk or
- * CTC_<hash>wECDSA, from pkcs7->publicKeyOID.
+/* gets correct encryption algo ID for SignedData, either CTC_<hash>wRSA or
+ * CTC_<hash>wECDSA, from pkcs7->publicKeyOID and pkcs7->hashOID.
  *
  * pkcs7          - pointer to PKCS7 structure
  * digEncAlgoId   - [OUT] output int to store correct algo ID in
@@ -633,8 +638,29 @@ static int wc_PKCS7_SignedDataGetEncAlgoId(PKCS7* pkcs7, int* digEncAlgoId,
 
     if (pkcs7->publicKeyOID == RSAk) {
 
-        algoId = pkcs7->encryptOID;
-        algoType = oidKeyType;
+        algoType = oidSigType;
+
+        switch (pkcs7->hashOID) {
+            case SHAh:
+                algoId = CTC_SHAwRSA;
+                break;
+
+            case SHA224h:
+                algoId = CTC_SHA224wRSA;
+                break;
+
+            case SHA256h:
+                algoId = CTC_SHA256wRSA;
+                break;
+
+            case SHA384h:
+                algoId = CTC_SHA384wRSA;
+                break;
+
+            case SHA512h:
+                algoId = CTC_SHA512wRSA;
+                break;
+        }
 
     } else if (pkcs7->publicKeyOID == ECDSAk) {
 
@@ -993,7 +1019,7 @@ int wc_PKCS7_EncodeSignedData(PKCS7* pkcs7, byte* output, word32 outputSz)
                                     esd->contentInfoSeq);
 
     esd->issuerSnSz = SetSerialNumber(pkcs7->issuerSn, pkcs7->issuerSnSz,
-                                     esd->issuerSn);
+                                     esd->issuerSn, MAX_SN_SZ);
     signerInfoSz += esd->issuerSnSz;
     esd->issuerNameSz = SetSequence(pkcs7->issuerSz, esd->issuerName);
     signerInfoSz += esd->issuerNameSz + pkcs7->issuerSz;
@@ -1503,7 +1529,8 @@ static int wc_PKCS7_SignedDataVerifySignature(PKCS7* pkcs7, byte* sig,
         return BAD_FUNC_ARG;
 
 #ifdef WOLFSSL_SMALL_STACK
-    pkcs7Digest = (byte*)XMALLOC(MAX_PKCS7_DIGEST_SZ, NULL, DYNAMIC_TYPE_TMP_BUFFER);
+    pkcs7Digest = (byte*)XMALLOC(MAX_PKCS7_DIGEST_SZ, NULL,
+                                 DYNAMIC_TYPE_TMP_BUFFER);
     if (pkcs7Digest == NULL)
         return MEMORY_E;
 #endif
@@ -1554,16 +1581,83 @@ static int wc_PKCS7_SignedDataVerifySignature(PKCS7* pkcs7, byte* sig,
 }
 
 
+/* set correct public key OID based on signature OID, stores in
+ * pkcs7->publicKeyOID and returns same value */
+static int wc_PKCS7_SetPublicKeyOID(PKCS7* pkcs7, int sigOID)
+{
+    if (pkcs7 == NULL)
+        return BAD_FUNC_ARG;
+
+    pkcs7->publicKeyOID = 0;
+
+    switch (sigOID) {
+
+    #ifndef NO_RSA
+        /* RSA signature types */
+        case CTC_MD2wRSA:
+        case CTC_MD5wRSA:
+        case CTC_SHAwRSA:
+        case CTC_SHA224wRSA:
+        case CTC_SHA256wRSA:
+        case CTC_SHA384wRSA:
+        case CTC_SHA512wRSA:
+            pkcs7->publicKeyOID = RSAk;
+            break;
+
+        /* if sigOID is already RSAk */
+        case RSAk:
+            pkcs7->publicKeyOID = sigOID;
+            break;
+    #endif
+
+    #ifndef NO_DSA
+        /* DSA signature types */
+        case CTC_SHAwDSA:
+            pkcs7->publicKeyOID = DSAk;
+            break;
+
+        /* if sigOID is already DSAk */
+        case DSAk:
+            pkcs7->publicKeyOID = sigOID;
+            break;
+    #endif
+
+    #ifdef HAVE_ECC
+        /* ECDSA signature types */
+        case CTC_SHAwECDSA:
+        case CTC_SHA224wECDSA:
+        case CTC_SHA256wECDSA:
+        case CTC_SHA384wECDSA:
+        case CTC_SHA512wECDSA:
+            pkcs7->publicKeyOID = ECDSAk;
+            break;
+
+        /* if sigOID is already ECDSAk */
+        case ECDSAk:
+            pkcs7->publicKeyOID = sigOID;
+            break;
+    #endif
+
+        default:
+            WOLFSSL_MSG("Unsupported public key algorithm");
+            return ASN_SIG_KEY_E;
+    }
+
+    return pkcs7->publicKeyOID;
+}
+
+
 /* Finds the certificates in the message and saves it. */
 int wc_PKCS7_VerifySignedData(PKCS7* pkcs7, byte* pkiMsg, word32 pkiMsgSz)
 {
-    word32 idx, contentType, hashOID;
+    word32 idx, contentType, hashOID, sigOID;
     int length, version, ret;
     byte* content = NULL;
     byte* sig = NULL;
     byte* cert = NULL;
     byte* signedAttrib = NULL;
     int contentSz = 0, sigSz = 0, certSz = 0, signedAttribSz = 0;
+    byte degenerate;
 
     if (pkcs7 == NULL || pkiMsg == NULL || pkiMsgSz == 0)
         return BAD_FUNC_ARG;
@@ -1609,6 +1703,7 @@ int wc_PKCS7_VerifySignedData(PKCS7* pkcs7, byte* pkiMsg, word32 pkiMsgSz)
 
     /* Skip the set. */
     idx += length;
+    degenerate = (length == 0)? 1 : 0;
 
     /* Get the inner ContentInfo sequence */
     if (GetSequence(pkiMsg, &idx, &length, pkiMsgSz) < 0)
@@ -1623,24 +1718,41 @@ int wc_PKCS7_VerifySignedData(PKCS7* pkcs7, byte* pkiMsg, word32 pkiMsgSz)
         return PKCS7_OID_E;
     }
 
-    if (pkiMsg[idx++] != (ASN_CONSTRUCTED | ASN_CONTEXT_SPECIFIC | 0))
-        return ASN_PARSE_E;
+    /* Check for content info, it could be omitted when degenerate */
+    {
+        word32 localIdx = idx;
+        ret = 0;
+        if (pkiMsg[localIdx++] != (ASN_CONSTRUCTED | ASN_CONTEXT_SPECIFIC | 0))
+            ret = ASN_PARSE_E;
 
-    if (GetLength(pkiMsg, &idx, &length, pkiMsgSz) <= 0)
-        return ASN_PARSE_E;
+        if (ret == 0 && GetLength(pkiMsg, &localIdx, &length, pkiMsgSz) <= 0)
+            ret = ASN_PARSE_E;
 
-    if (pkiMsg[idx++] != ASN_OCTET_STRING)
-        return ASN_PARSE_E;
+        if (ret == 0 && pkiMsg[localIdx++] != ASN_OCTET_STRING)
+            ret = ASN_PARSE_E;
 
-    if (GetLength(pkiMsg, &idx, &length, pkiMsgSz) < 0)
-        return ASN_PARSE_E;
+        if (ret == 0 && GetLength(pkiMsg, &localIdx, &length, pkiMsgSz) < 0)
+            ret = ASN_PARSE_E;
 
-    /* Save the inner data as the content. */
-    if (length > 0) {
-        /* Local pointer for calculating hashes later */
-        pkcs7->content = content = &pkiMsg[idx];
-        pkcs7->contentSz = contentSz = length;
-        idx += length;
+        /* Save the inner data as the content. */
+        if (length > 0) {
+            /* Local pointer for calculating hashes later */
+            pkcs7->content = content = &pkiMsg[localIdx];
+            pkcs7->contentSz = contentSz = length;
+            localIdx += length;
+        }
+
+        /* update idx if successful */
+        if (ret == 0) {
+            idx = localIdx;
+        }
+    }
+
+    /* If getting the content info failed with non degenerate then return the
+     * error case. Otherwise with a degenerate it is ok if the content
+     * info was omitted */
+    if (!degenerate && ret != 0) {
+        return ret;
     }
 
     /* Get the implicit[0] set of certificates */
@@ -1725,12 +1837,17 @@ int wc_PKCS7_VerifySignedData(PKCS7* pkcs7, byte* pkiMsg, word32 pkiMsgSz)
             idx += length;
         }
 
-        /* Get the sequence of digestEncryptionAlgorithm */
-        if (GetSequence(pkiMsg, &idx, &length, pkiMsgSz) < 0)
+        /* Get digestEncryptionAlgorithm */
+        if (GetAlgoId(pkiMsg, &idx, &sigOID, oidSigType, pkiMsgSz) < 0) {
             return ASN_PARSE_E;
+        }
 
-        /* Skip it */
-        idx += length;
+        /* store public key type based on digestEncryptionAlgorithm */
+        ret = wc_PKCS7_SetPublicKeyOID(pkcs7, sigOID);
+        if (ret <= 0) {
+            WOLFSSL_MSG("Failed to set public key OID from signature");
+            return ret;
+        }
 
         /* Get the signature */
         if (pkiMsg[idx] == ASN_OCTET_STRING) {
@@ -2576,7 +2693,7 @@ static int wc_CreateRecipientInfo(const byte* cert, word32 certSz,
 #endif
         return -1;
     }
-    snSz = SetSerialNumber(decoded->serial, decoded->serialSz, serial);
+    snSz = SetSerialNumber(decoded->serial, decoded->serialSz, serial, MAX_SN_SZ);
 
     issuerSerialSeqSz = SetSequence(issuerSeqSz + issuerSz + snSz,
                                     issuerSerialSeq);
@@ -3217,7 +3334,7 @@ static int wc_PKCS7_DecodeKtri(PKCS7* pkcs7, byte* pkiMsg, word32 pkiMsgSz,
     int keySz;
     word32 encOID;
     word32 keyIdx;
-    byte   issuerHash[SHA_DIGEST_SIZE];
+    byte   issuerHash[KEYID_SIZE];
     byte*  outKey = NULL;
 
 #ifdef WC_RSA_BLINDING
@@ -3245,7 +3362,7 @@ static int wc_PKCS7_DecodeKtri(PKCS7* pkcs7, byte* pkiMsg, word32 pkiMsgSz,
         return ASN_PARSE_E;
 
     /* if we found correct recipient, issuer hashes will match */
-    if (XMEMCMP(issuerHash, pkcs7->issuerHash, SHA_DIGEST_SIZE) == 0) {
+    if (XMEMCMP(issuerHash, pkcs7->issuerHash, KEYID_SIZE) == 0) {
         *recipFound = 1;
     }
 
@@ -4153,6 +4270,8 @@ WOLFSSL_API int wc_PKCS7_DecodeEnvelopedData(PKCS7* pkcs7, byte* pkiMsg,
 }
 
 
+#ifndef NO_PKCS7_ENCRYPTED_DATA
+
 /* build PKCS#7 encryptedData content type, return encrypted size */
 int wc_PKCS7_EncodeEncryptedData(PKCS7* pkcs7, byte* output, word32 outputSz)
 {
@@ -4616,6 +4735,8 @@ int wc_PKCS7_DecodeEncryptedData(PKCS7* pkcs7, byte* pkiMsg, word32 pkiMsgSz,
 
     return encryptedContentSz - padLen;
 }
+
+#endif /* NO_PKCS7_ENCRYPTED_DATA */
 
 #else  /* HAVE_PKCS7 */
 

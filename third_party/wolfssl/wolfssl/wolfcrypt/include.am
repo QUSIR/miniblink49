@@ -70,7 +70,10 @@ noinst_HEADERS+= \
                          wolfssl/wolfcrypt/port/nrf51.h \
                          wolfssl/wolfcrypt/port/nxp/ksdk_port.h \
                          wolfssl/wolfcrypt/port/atmel/atmel.h \
-                         wolfssl/wolfcrypt/port/xilinx/xil-sha3.h
+                         wolfssl/wolfcrypt/port/xilinx/xil-sha3.h \
+                         wolfssl/wolfcrypt/port/caam/caam_driver.h \
+                         wolfssl/wolfcrypt/port/caam/wolfcaam.h \
+                         wolfssl/wolfcrypt/port/caam/wolfcaam_sha.h
 
 if BUILD_ASYNCCRYPT
 nobase_include_HEADERS+= wolfssl/wolfcrypt/async.h
@@ -83,5 +86,9 @@ endif
 if BUILD_INTEL_QA
 nobase_include_HEADERS+= wolfssl/wolfcrypt/port/intel/quickassist.h
 nobase_include_HEADERS+= wolfssl/wolfcrypt/port/intel/quickassist_mem.h
+endif
+
+if BUILD_SP
+nobase_include_HEADERS+= wolfssl/wolfcrypt/sp.h
 endif
 

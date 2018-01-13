@@ -1,3 +1,24 @@
+/* bn.h
+ *
+ * Copyright (C) 2006-2017 wolfSSL Inc.
+ *
+ * This file is part of wolfSSL.
+ *
+ * wolfSSL is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * wolfSSL is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1335, USA
+ */
+
 /* bn.h for openssl */
 
 
@@ -37,6 +58,8 @@ WOLFSSL_API int wolfSSL_BN_mod(WOLFSSL_BIGNUM*, const WOLFSSL_BIGNUM*,
                              const WOLFSSL_BIGNUM*, const WOLFSSL_BN_CTX*);
 WOLFSSL_API int wolfSSL_BN_mod_exp(WOLFSSL_BIGNUM *r, const WOLFSSL_BIGNUM *a,
         const WOLFSSL_BIGNUM *p, const WOLFSSL_BIGNUM *m, WOLFSSL_BN_CTX *ctx);
+WOLFSSL_API int wolfSSL_BN_mod_mul(WOLFSSL_BIGNUM *r, const WOLFSSL_BIGNUM *a,
+        const WOLFSSL_BIGNUM *b, const WOLFSSL_BIGNUM *m, WOLFSSL_BN_CTX *ctx);
 WOLFSSL_API const WOLFSSL_BIGNUM* wolfSSL_BN_value_one(void);
 
 
@@ -55,6 +78,8 @@ WOLFSSL_API WOLFSSL_BIGNUM* wolfSSL_BN_bin2bn(const unsigned char*, int len,
 
 WOLFSSL_API int wolfSSL_mask_bits(WOLFSSL_BIGNUM*, int n);
 
+WOLFSSL_API int wolfSSL_BN_pseudo_rand(WOLFSSL_BIGNUM*, int bits, int top,
+        int bottom);
 WOLFSSL_API int wolfSSL_BN_rand(WOLFSSL_BIGNUM*, int bits, int top, int bottom);
 WOLFSSL_API int wolfSSL_BN_is_bit_set(const WOLFSSL_BIGNUM*, int n);
 WOLFSSL_API int wolfSSL_BN_hex2bn(WOLFSSL_BIGNUM**, const char* str);
@@ -84,7 +109,8 @@ WOLFSSL_API WOLFSSL_BN_ULONG wolfSSL_BN_mod_word(const WOLFSSL_BIGNUM*,
 WOLFSSL_API int wolfSSL_BN_rshift(WOLFSSL_BIGNUM*, const WOLFSSL_BIGNUM*, int);
 WOLFSSL_API WOLFSSL_BIGNUM *wolfSSL_BN_CTX_get(WOLFSSL_BN_CTX *ctx);
 WOLFSSL_API void wolfSSL_BN_CTX_start(WOLFSSL_BN_CTX *ctx);
-
+WOLFSSL_API WOLFSSL_BIGNUM *wolfSSL_BN_mod_inverse(WOLFSSL_BIGNUM*, WOLFSSL_BIGNUM*,
+                                        const WOLFSSL_BIGNUM*, WOLFSSL_BN_CTX *ctx);
 typedef WOLFSSL_BIGNUM BIGNUM;
 typedef WOLFSSL_BN_CTX BN_CTX;
 typedef WOLFSSL_BN_GENCB BN_GENCB;
@@ -111,14 +137,16 @@ typedef WOLFSSL_BN_GENCB BN_GENCB;
 
 #define BN_mod       wolfSSL_BN_mod
 #define BN_mod_exp   wolfSSL_BN_mod_exp
+#define BN_mod_mul   wolfSSL_BN_mod_mul
 #define BN_sub       wolfSSL_BN_sub
 #define BN_value_one wolfSSL_BN_value_one
 
 #define BN_mask_bits wolfSSL_mask_bits
 
-#define BN_rand       wolfSSL_BN_rand
-#define BN_is_bit_set wolfSSL_BN_is_bit_set
-#define BN_hex2bn     wolfSSL_BN_hex2bn
+#define BN_pseudo_rand wolfSSL_BN_pseudo_rand
+#define BN_rand        wolfSSL_BN_rand
+#define BN_is_bit_set  wolfSSL_BN_is_bit_set
+#define BN_hex2bn      wolfSSL_BN_hex2bn
 
 #define BN_dup  wolfSSL_BN_dup
 #define BN_copy wolfSSL_BN_copy
@@ -143,6 +171,8 @@ typedef WOLFSSL_BN_GENCB BN_GENCB;
 
 #define BN_CTX_get wolfSSL_BN_CTX_get
 #define BN_CTX_start wolfSSL_BN_CTX_start
+
+#define BN_mod_inverse wolfSSL_BN_mod_inverse
 
 #ifdef __cplusplus
     }  /* extern "C" */

@@ -1,6 +1,6 @@
 /* error.c
  *
- * Copyright (C) 2006-2016 wolfSSL Inc.
+ * Copyright (C) 2006-2017 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -433,6 +433,15 @@ const char* wc_GetErrorString(int error)
 
     case ECC_PRIVATEONLY_E:
         return "Invalid use of private only ECC key";
+
+    case WC_HW_E:
+        return "Error with hardware crypto use";
+
+    case WC_HW_WAIT_E:
+        return "Hardware waiting on resource";
+
+    case PSS_SALTLEN_E:
+        return "PSS - Length of salt is too big for hash algorithm";
 
     default:
         return "unknown error number";

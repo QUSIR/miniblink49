@@ -1,6 +1,6 @@
 /* asm.c
  *
- * Copyright (C) 2006-2016 wolfSSL Inc.
+ * Copyright (C) 2006-2017 wolfSSL Inc.
  *
  * This file is part of wolfSSL.
  *
@@ -211,6 +211,7 @@ __asm__(                                                  \
         "movq	$0, %%rdx\n\t"                                         \
         "adoxq	%%rdx, %%rax\n\t"                                      \
         "adcxq	%%rdx, %[cy]\n\t"                                      \
+        "adoxq	%%rdx, %[cy]\n\t"                                      \
         "addq   %%rax, %%r15\n\t"                                      \
         "adcq   $0, %[cy]\n\t"                                         \
                                                                        \
