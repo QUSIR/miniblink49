@@ -39,6 +39,7 @@
 #define WOLFSSL_SNIFFER
 #define HAVE_TLS_EXTENSIONS
 #define HAVE_SECURE_RENEGOTIATION
+#define WOLFSSL_ALLOW_TLSV10
 /* Uncomment next line if using IPHONE */
 /* #define IPHONE */
 
