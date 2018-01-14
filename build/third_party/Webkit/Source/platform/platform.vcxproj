@@ -459,6 +459,7 @@
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-decoders\GDIPlus\ImageGDIPlusDecoder.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-decoders\gif\GIFImageDecoder.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-decoders\gif\GIFImageReader.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-decoders\ico\ICOImageDecoder.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-decoders\jpeg\JPEGImageDecoder.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-decoders\png\PNGImageDecoder.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-encoders\gdiplus\GDIPlusImageEncoder.cpp" />

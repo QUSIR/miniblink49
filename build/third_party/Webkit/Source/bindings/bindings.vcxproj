@@ -274,6 +274,7 @@
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\custom\V8DocumentCustom.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\custom\V8HTMLOptionsCollectionCustom.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\custom\V8HTMLPlugInElementCustom.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\custom\V8MutationObserverCustom.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\npruntime.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\NPV8Object.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\OnStackObjectChecker.cpp" />

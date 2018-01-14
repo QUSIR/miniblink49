@@ -217,7 +217,7 @@
       <AdditionalOptions>/Zc:threadSafeInit- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -301,7 +301,10 @@
     <ClCompile Include="..\..\cc\blink\WebScrollbarLayerImpl.cpp" />
     <ClCompile Include="..\..\cc\layers\CompositingLayer.cpp" />
     <ClCompile Include="..\..\cc\playback\LayerChangeAction.cpp" />
-    <ClCompile Include="..\..\cc\raster\RasterTaskWorkerThreadPool.cpp" />
+    <ClCompile Include="..\..\cc\playback\TileActionInfo.cpp" />
+    <ClCompile Include="..\..\cc\raster\RasterFilters.cpp" />
+    <ClCompile Include="..\..\cc\raster\RasterResouce.cpp" />
+    <ClCompile Include="..\..\cc\raster\RasterTask.cpp" />
     <ClCompile Include="..\..\cc\tiles\CompositingTile.cpp" />
     <ClCompile Include="..\..\cc\tiles\Tile.cpp" />
     <ClCompile Include="..\..\cc\tiles\TileGrid.cpp" />
@@ -311,6 +314,7 @@
     <ClCompile Include="..\..\content\browser\CheckReEnter.cpp" />
     <ClCompile Include="..\..\content\browser\NavigationController.cpp" />
     <ClCompile Include="..\..\content\browser\PlatformEventHandler.cpp" />
+    <ClCompile Include="..\..\content\browser\PlatformMessagePortChannel.cpp" />
     <ClCompile Include="..\..\content\browser\PopupMenuWin.cpp" />
     <ClCompile Include="..\..\content\browser\WebFrameClientImpl.cpp" />
     <ClCompile Include="..\..\content\browser\WebPage.cpp" />
@@ -348,6 +352,7 @@
     <ClCompile Include="..\..\content\web_impl_win\WebCookieJarCurlImpl.cpp" />
     <ClCompile Include="..\..\content\web_impl_win\WebFileUtilitiesImpl.cpp" />
     <ClCompile Include="..\..\content\web_impl_win\WebMediaPlayerImpl.cpp" />
+    <ClCompile Include="..\..\content\web_impl_win\WebMessagePortChannelImpl.cpp" />
     <ClCompile Include="..\..\content\web_impl_win\WebMimeRegistryImpl.cpp" />
     <ClCompile Include="..\..\content\web_impl_win\WebSchedulerImpl.cpp" />
     <ClCompile Include="..\..\content\web_impl_win\WebThemeEngineImpl.cpp" />
@@ -961,6 +966,7 @@
     <ClCompile Include="..\..\net\websocket\WebSocketHandshake.cpp" />
     <ClCompile Include="..\..\net\websocket\WebSocketOneFrame.cpp" />
     <ClCompile Include="..\..\net\WebURLLoaderManager.cpp" />
+    <ClCompile Include="..\..\skia\ext\analysis_canvas.cc" />
     <ClCompile Include="..\..\skia\ext\bitmap_platform_device_win.cc" />
     <ClCompile Include="..\..\skia\ext\fontmgr_default_win.cc" />
     <ClCompile Include="..\..\skia\ext\lazy_pixel_ref.cc" />
@@ -1010,17 +1016,18 @@
     <ClInclude Include="..\..\cc\blink\WebLayerImplClient.h" />
     <ClInclude Include="..\..\cc\blink\WebScrollbarLayerImpl.h" />
     <ClInclude Include="..\..\cc\layers\CompositingLayer.h" />
-    <ClInclude Include="..\..\cc\playback\DisplayListRecordingSource.h" />
     <ClInclude Include="..\..\cc\playback\LayerChangeAction.h" />
     <ClInclude Include="..\..\cc\playback\TileActionInfo.h" />
+    <ClInclude Include="..\..\cc\raster\RasterFilters.h" />
     <ClInclude Include="..\..\cc\raster\RasterResouce.h" />
+    <ClInclude Include="..\..\cc\raster\RasterTask.h" />
     <ClInclude Include="..\..\cc\raster\RasterTaskClient.h" />
-    <ClInclude Include="..\..\cc\raster\RasterTaskWorkerThreadPool.h" />
     <ClInclude Include="..\..\cc\raster\RecordDrawHelp.h" />
     <ClInclude Include="..\..\cc\raster\SkBitmapRefWrap.h" />
     <ClInclude Include="..\..\cc\tiles\CompositingTile.h" />
     <ClInclude Include="..\..\cc\tiles\Tile.h" />
     <ClInclude Include="..\..\cc\tiles\TileGrid.h" />
+    <ClInclude Include="..\..\cc\tiles\TileWidthHeight.h" />
     <ClInclude Include="..\..\cc\trees\ActionsFrameGroup.h" />
     <ClInclude Include="..\..\cc\trees\DrawProperties.h" />
     <ClInclude Include="..\..\cc\trees\LayerSorter.h" />
@@ -1028,6 +1035,7 @@
     <ClInclude Include="..\..\content\browser\CheckReEnter.h" />
     <ClInclude Include="..\..\content\browser\NavigationController.h" />
     <ClInclude Include="..\..\content\browser\PlatformEventHandler.h" />
+    <ClInclude Include="..\..\content\browser\PlatformMessagePortChannel.h" />
     <ClInclude Include="..\..\content\browser\PopupMenuWin.h" />
     <ClInclude Include="..\..\content\browser\SharedTimerWin.h" />
     <ClInclude Include="..\..\content\browser\WebFrameClientImpl.h" />
@@ -1057,6 +1065,7 @@
     <ClInclude Include="..\..\content\web_impl_win\WebCookieJarINetImpl.h" />
     <ClInclude Include="..\..\content\web_impl_win\WebFileUtilitiesImpl.h" />
     <ClInclude Include="..\..\content\web_impl_win\WebMediaPlayerImpl.h" />
+    <ClInclude Include="..\..\content\web_impl_win\WebMessagePortChannelImpl.h" />
     <ClInclude Include="..\..\content\web_impl_win\WebMimeRegistryImpl.h" />
     <ClInclude Include="..\..\content\web_impl_win\WebSchedulerImpl.h" />
     <ClInclude Include="..\..\content\web_impl_win\WebThemeEngineImpl.h" />

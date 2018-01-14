@@ -1300,6 +1300,9 @@
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\exported\WebSpeechSynthesizerClientImpl.cpp">
       <Filter>platform\exported</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-decoders\ico\ICOImageDecoder.cpp">
+      <Filter>platform\image-decoders\ico</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\platform\animation\AnimationUtilities.h">

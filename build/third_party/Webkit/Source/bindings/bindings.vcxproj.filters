@@ -301,6 +301,9 @@
       <Filter>bindings\core\v8</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\config.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\custom\V8MutationObserverCustom.cpp">
+      <Filter>bindings\core\v8\custom</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ActiveDOMCallback.h">
