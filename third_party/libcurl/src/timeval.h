@@ -31,7 +31,11 @@ typedef curl_off_t timediff_t;
 #endif
 
 struct curltime {
-  time_t tv_sec; /* seconds */
+#if _WIN64
+  __int64 tv_sec; /* seconds */
+#else
+  long tv_sec; /* seconds */
+#endif
   int tv_usec;   /* microseconds */
 };
 

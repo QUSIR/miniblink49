@@ -290,11 +290,11 @@ public:
         SkBitmap* bitmap = doRaster(m_dirtyRect);
         m_blendAction->setDirtyRectBitmap(bitmap);
 
-        if (0) {
-            Vector<unsigned char> output;
-            blink::GDIPlusImageEncoder::encode(*bitmap, blink::GDIPlusImageEncoder::PNG, &output);
-            blink::saveDumpFile("E:\\mycode\\miniblink49\\trunk\\out\\1.png", (char*)output.data(), output.size());
-        }
+        //if (0) {
+        //    Vector<unsigned char> output;
+        //    blink::GDIPlusImageEncoder::encode(*bitmap, blink::GDIPlusImageEncoder::PNG, &output);
+        //    blink::saveDumpFile("E:\\mycode\\miniblink49\\trunk\\out\\1.png", (char*)output.data(), output.size());
+        //}
 #endif
     }
 
