@@ -21,12 +21,16 @@
       <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3B6807E7-4125-4892-8F4D-568B61462CAF}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>skia</RootNamespace>
-    <WindowsTargetPlatformVersion>7.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -54,6 +58,12 @@
     <PlatformToolset>v141_xp</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformToolset>v141</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -94,6 +104,10 @@
     <OutDir>$(SolutionDir)..\out\$(Platform)$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)..\out\tmp\$(Platform)$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\out\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\tmp\$(Platform)$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -122,12 +136,10 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <StringPooling>true</StringPooling>
-      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <ExceptionHandling>false</ExceptionHandling>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <AdditionalOptions>/Zc:threadSafeInit- %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Full</Optimization>
-      <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <MinimalRebuild>true</MinimalRebuild>
@@ -157,7 +169,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>SK_GDI_ALWAYS_USE_TEXTMETRICS_FOR_FONT_METRICS;SK_USE_DISCARDABLE_SCALEDIMAGECACHE;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../../third_party/skia/include/codec;../../third_party/skia/include/config;../../third_party/skia/include/core;../../third_party/skia/include/device;../../third_party/skia/include/effects;../../third_party/skia/include/images;../../third_party/skia/include/pathops;../../third_party/skia/include/pipe;../../third_party/skia/include/ports;../../third_party/skia/include/utils/win;../../third_party/skia/include/utils;../../third_party/skia/src/image;../../third_party/skia/src/core;../../third_party/skia/src/sfnt;../../third_party/skia/src/lazy;../../third_party/skia/src/utils;../../third_party/skia/src/opts;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../third_party/skia/include/codec;../../../third_party/skia/include/config;../../../third_party/skia/include/core;../../../third_party/skia/include/device;../../../third_party/skia/include/effects;../../../third_party/skia/include/images;../../../third_party/skia/include/pathops;../../../third_party/skia/include/pipe;../../../third_party/skia/include/ports;../../../third_party/skia/include/utils/win;../../../third_party/skia/include/utils;../../../third_party/skia/src/image;../../../third_party/skia/src/core;../../../third_party/skia/src/sfnt;../../../third_party/skia/src/lazy;../../../third_party/skia/src/utils;../../../third_party/skia/src/opts;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <DisableSpecificWarnings>4244</DisableSpecificWarnings>
@@ -167,6 +179,21 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../third_party/skia/include/codec;../../../third_party/skia/include/config;../../../third_party/skia/include/core;../../../third_party/skia/include/device;../../../third_party/skia/include/effects;../../../third_party/skia/include/images;../../../third_party/skia/include/pathops;../../../third_party/skia/include/pipe;../../../third_party/skia/include/ports;../../../third_party/skia/include/utils/win;../../../third_party/skia/include/utils;../../../third_party/skia/src/image;../../../third_party/skia/src/core;../../../third_party/skia/src/sfnt;../../../third_party/skia/src/lazy;../../../third_party/skia/src/utils;../../../third_party/skia/src/opts;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <PreprocessorDefinitions>SK_CPU_SSE_LEVEL=20;SK_GDI_ALWAYS_USE_TEXTMETRICS_FOR_FONT_METRICS;SK_USE_DISCARDABLE_SCALEDIMAGECACHE;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

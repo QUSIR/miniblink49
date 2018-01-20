@@ -31,7 +31,6 @@
     <RootNamespace>miniblink</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <ProjectName>public</ProjectName>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -47,7 +46,7 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -358,22 +357,23 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;BUILDING_CEF_SHARED;INSIDE_BLINK=1;BLINK_IMPLEMENTATION=1;ENABLE_OILPAN=1;ENABLE_WKE=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;INSIDE_BLINK=1;BLINK_IMPLEMENTATION=1;ENABLE_OILPAN=1;ENABLE_WKE=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>../../;../../v8_5_7/;../../v8_5_7/include;../../third_party/;../../third_party/GDIPlus/Includes;../../third_party/npapi;../../third_party/WebKit;../../third_party/WebKit/Source;../../cef;../../third_party/icu/source/common;../../gen/blink;../../gen/blink/core;../../gen/blink/bindings/modules/v8;../../gen/blink/bindings/core/v8;../../gpu;../../third_party/khronos;../../third_party/libxml/src/include;../../third_party/libxml/win32/include;../../third_party/skia/include/core;../../third_party/skia/include/config;../../third_party/skia/include/codec;../../third_party/skia/include/device;../../third_party/skia/include/effects;../../third_party/skia/include/images;../../third_party/skia/include/pathops;../../third_party/skia/include/ports;../../third_party/skia/include/private;../../third_party/skia/include/utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../../;../../../../v8_4_8/;../../../../v8_4_8/include;../../../../base;../../../../third_party/;../../../../third_party/GDIPlus/Includes;../../../../third_party/npapi;../../../../third_party/WebKit;../../../../third_party/WebKit/Source;../../../../cef;../../../../third_party/icu/source/common;../../../../gen/blink;../../../../gen/blink/core;../../../../gen/blink/bindings/modules/v8;../../../../gen/blink/bindings/core/v8;../../../../gpu;../../../../third_party/khronos;../../../../third_party/libxml/src/include;../../../../third_party/libxml/win32/include;../../../../third_party/skia/include/core;../../../../third_party/skia/include/config;../../../../third_party/skia/include/codec;../../../../third_party/skia/include/device;../../../../third_party/skia/include/effects;../../../../third_party/skia/include/images;../../../../third_party/skia/include/pathops;../../../../third_party/skia/include/ports;../../../../third_party/skia/include/private;../../../../third_party/skia/include/utils</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>config.h</PrecompiledHeaderFile>
       <DisableSpecificWarnings>4800;4291;4996;4244;4305;4577;4530;4595;4049;4267;4302;4311</DisableSpecificWarnings>
       <ForcedIncludeFiles>config.h</ForcedIncludeFiles>
       <Optimization>Full</Optimization>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ExceptionHandling>false</ExceptionHandling>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
