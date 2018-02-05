@@ -625,6 +625,8 @@
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-decoders\jpeg\JPEGImageDecoder.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-decoders\png\PNGImageDecoder.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-encoders\gdiplus\GDIPlusImageEncoder.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-encoders\skia\JPEGImageEncoder.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-encoders\skia\PNGImageEncoder.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\network\NetworkHints.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\network\ResourceTimingInfo.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\PartitionAllocMemoryDumpProvider.cpp" />

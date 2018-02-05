@@ -1303,6 +1303,12 @@
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-decoders\ico\ICOImageDecoder.cpp">
       <Filter>platform\image-decoders\ico</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-encoders\skia\JPEGImageEncoder.cpp">
+      <Filter>platform\image-encoders\skia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-encoders\skia\PNGImageEncoder.cpp">
+      <Filter>platform\image-encoders\skia</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\platform\animation\AnimationUtilities.h">

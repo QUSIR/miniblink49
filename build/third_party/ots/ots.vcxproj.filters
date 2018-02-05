@@ -111,6 +111,39 @@
     <ClInclude Include="..\..\..\third_party\ots\include\opentype-sanitiser.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\third_party\brotli\dec\bit_reader.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\third_party\brotli\dec\context.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\third_party\brotli\dec\decode.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\third_party\brotli\dec\dictionary.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\third_party\brotli\dec\huffman.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\third_party\brotli\dec\port.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\third_party\brotli\dec\prefix.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\third_party\brotli\dec\state.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\third_party\brotli\dec\streams.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\third_party\brotli\dec\transform.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\third_party\brotli\dec\types.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\third_party\ots\src\vdmx.cc">
@@ -201,6 +234,27 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\third_party\ots\src\prep.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\third_party\brotli\dec\bit_reader.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\third_party\brotli\dec\decode.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\third_party\brotli\dec\dictionary.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\third_party\brotli\dec\huffman.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\third_party\brotli\dec\state.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\third_party\brotli\dec\streams.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\third_party\ots\src\woff2.cc">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
