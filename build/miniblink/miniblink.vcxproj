@@ -458,6 +458,7 @@
       <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</WholeProgramOptimization>
       <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release_VC6|x64'">false</WholeProgramOptimization>
     </ClCompile>
+    <ClCompile Include="..\..\base\WindowsVersion.cpp" />
     <ClCompile Include="..\..\cc\base\MathUtil.cpp" />
     <ClCompile Include="..\..\cc\blink\WebCompositorSupportImpl.cpp" />
     <ClCompile Include="..\..\cc\blink\WebContentLayerImpl.cpp" />
@@ -1175,6 +1176,7 @@
     <ClInclude Include="..\..\base\thread.h" />
     <ClInclude Include="..\..\base\time\time.h" />
     <ClInclude Include="..\..\base\values.h" />
+    <ClInclude Include="..\..\base\WindowsVersion.h" />
     <ClInclude Include="..\..\cc\base\MathUtil.h" />
     <ClInclude Include="..\..\cc\blink\WebCompositorSupportImpl.h" />
     <ClInclude Include="..\..\cc\blink\WebContentLayerImpl.h" />
