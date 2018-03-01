@@ -34,6 +34,9 @@
     <Filter Include="modules\fetch">
       <UniqueIdentifier>{2d3cba34-d3b3-44e8-99d2-9ea6f564c8ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="modules\filesystem">
+      <UniqueIdentifier>{79488536-8908-4c2b-9a12-db10fd91e2c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\canvas2d\CanvasStyle.cpp">
@@ -237,6 +240,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\fetch\Response.cpp">
       <Filter>modules\fetch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\filesystem\DevToolsHostFileSystem.cpp">
+      <Filter>modules\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\filesystem\DOMFilePath.cpp">
+      <Filter>modules\filesystem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -465,6 +474,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\fetch\ResponseInit.h">
       <Filter>modules\fetch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\filesystem\DevToolsHostFileSystem.h">
+      <Filter>modules\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\filesystem\DOMFilePath.h">
+      <Filter>modules\filesystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

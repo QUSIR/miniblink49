@@ -25,6 +25,9 @@
     <Filter Include="bindings\templates">
       <UniqueIdentifier>{7cdfcb0e-ccbd-4647-b43f-a50da7dbfde5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="bindings\core\v8\inspector">
+      <UniqueIdentifier>{8adb2c1e-af38-4b32-a9ba-e7d44f0867cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ActiveDOMCallback.cpp">
@@ -303,6 +306,24 @@
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\config.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\custom\V8MutationObserverCustom.cpp">
       <Filter>bindings\core\v8\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\custom\V8DevToolsHostCustom.cpp">
+      <Filter>bindings\core\v8\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\inspector\InspectorWrapper.cpp">
+      <Filter>bindings\core\v8\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\inspector\V8InjectedScriptHost.cpp">
+      <Filter>bindings\core\v8\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\inspector\V8JavaScriptCallFrame.cpp">
+      <Filter>bindings\core\v8\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ScriptHeapSnapshot.cpp">
+      <Filter>bindings\core\v8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ScriptProfiler.cpp">
+      <Filter>bindings\core\v8</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -589,5 +610,20 @@
       <Filter>bindings\core\v8</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\config.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\inspector\InspectorWrapper.h">
+      <Filter>bindings\core\v8\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\inspector\V8InjectedScriptHost.h">
+      <Filter>bindings\core\v8\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\inspector\V8JavaScriptCallFrame.h">
+      <Filter>bindings\core\v8\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ScriptHeapSnapshot.h">
+      <Filter>bindings\core\v8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ScriptProfiler.h">
+      <Filter>bindings\core\v8</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

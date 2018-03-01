@@ -723,13 +723,7 @@
     <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\input\InputDevice.cpp">
       <Filter>core\input</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorNone.cpp">
-      <Filter>core\inspector</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ConsoleMessage.cpp">
-      <Filter>core\inspector</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorTraceEventsNone.cpp">
       <Filter>core\inspector</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ConsoleMessageStorage.cpp">
@@ -1024,6 +1018,189 @@
       <Filter>core\workers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\config.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\AsyncCallChain.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\AsyncCallTracker.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ContentSearchUtils.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\DevToolsHost.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\DOMEditor.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\DOMPatchSupport.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\EventListenerInfo.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\IdentifiersFactory.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InjectedScript.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InjectedScriptHost.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InjectedScriptManager.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InjectedScriptNative.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorAnimationAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorApplicationCacheAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorBaseAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorConsoleAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorCSSAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorDebuggerAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorDOMAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorDOMDebuggerAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorHeapProfilerAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorHighlight.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorHistory.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorInputAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorInspectorAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorInstrumentation.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorLayerTreeAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorMemoryAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorOverlayHost.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorPageAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorProfilerAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorResourceAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorResourceContentLoader.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorRuntimeAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorState.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorStyleSheet.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorTaskRunner.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorTimelineAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorTraceEvents.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorTracingAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorWorkerAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\JavaScriptCallFrame.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\JSONParser.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\LayoutEditor.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\MainThreadDebugger.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\NetworkResourcesData.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\PageConsoleAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\PageDebuggerAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\PageRuntimeAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\PromiseTracker.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ScriptDebuggerBase.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ScriptDebugListener.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ScriptProfile.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\V8AsyncCallTracker.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\V8Debugger.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\WorkerConsoleAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\WorkerDebuggerAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\WorkerInspectorController.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\WorkerRuntimeAgent.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\WorkerThreadDebugger.cpp">
+      <Filter>core\inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\third_party\WebKit\Source\core\xml\XMLSerializer.cpp">
+      <Filter>core\xml</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\clipboard\DataObject.h">
@@ -2251,6 +2428,213 @@
       <Filter>core\workers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\config.h" />
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\AsyncCallChain.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\AsyncCallTracker.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ConsoleMessage.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ConsoleMessageStorage.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ContentSearchUtils.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\DevToolsHost.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\DOMEditor.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\DOMPatchSupport.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\EventListenerInfo.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\IdentifiersFactory.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InjectedScript.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InjectedScriptHost.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InjectedScriptHostClient.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InjectedScriptManager.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InjectedScriptNative.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorAnimationAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorApplicationCacheAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorBaseAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorConsoleAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorConsoleInstrumentation.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorCSSAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorDebuggerAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorDOMAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorDOMDebuggerAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorHeapProfilerAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorHighlight.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorHistory.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorInputAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorInspectorAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorInstrumentation.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorLayerTreeAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorMemoryAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorOverlay.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorOverlayHost.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorPageAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorProfilerAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorResourceAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorResourceContentLoader.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorRuntimeAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorState.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorStateClient.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorStyleSheet.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorTaskRunner.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorTimelineAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorTraceEvents.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorTracingAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\InspectorWorkerAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\JavaScriptCallFrame.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\JSONParser.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\LayoutEditor.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\MainThreadDebugger.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\NetworkResourcesData.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\PageConsoleAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\PageDebuggerAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\PageRuntimeAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\PromiseTracker.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ScriptAsyncCallStack.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ScriptBreakpoint.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ScriptDebuggerBase.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ScriptDebugListener.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\ScriptProfile.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\V8AsyncCallTracker.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\V8Debugger.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\WorkerConsoleAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\WorkerDebuggerAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\WorkerInspectorController.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\WorkerRuntimeAgent.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\inspector\WorkerThreadDebugger.h">
+      <Filter>core\inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\third_party\WebKit\Source\core\xml\XMLSerializer.h">
+      <Filter>core\xml</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\..\third_party\WebKit\Source\core\events\events.rar">

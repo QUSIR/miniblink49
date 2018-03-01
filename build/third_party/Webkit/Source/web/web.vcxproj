@@ -450,7 +450,8 @@
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\FrameLoaderClientImpl.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\FullscreenControllerNone.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\GraphicsLayerFactoryChromium.cpp" />
-    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\InspectorOverlayImplNone.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\InspectorOverlayImpl.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\InspectorRenderingAgent.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\LinkHighlight.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\OpenedFrameTracker.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\PageOverlay.cpp" />
@@ -471,7 +472,8 @@
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\WebColorSuggestion.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDataSourceImpl.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDateTimeSuggestion.cpp" />
-    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDevToolsAgentImplNone.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDevToolsAgentImpl.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDevToolsFrontendImpl.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDocument.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDocumentType.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDOMEvent.cpp" />
@@ -529,6 +531,8 @@
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\ExternalPopupMenu.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\FrameLoaderClientImpl.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\GraphicsLayerFactoryChromium.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\InspectorOverlayImpl.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\InspectorRenderingAgent.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\LinkHighlight.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\NotificationPermissionClientImpl.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\OpenedFrameTracker.h" />
@@ -547,6 +551,8 @@
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\SuspendableScriptExecutor.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\ValidationMessageClientImpl.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDataSourceImpl.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDevToolsAgentImpl.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDevToolsFrontendImpl.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\WebFileChooserCompletionImpl.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\WebFrameWidgetImpl.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\WebGraphicsContextImpl.h" />

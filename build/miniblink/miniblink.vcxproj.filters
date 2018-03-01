@@ -187,6 +187,15 @@
     <Filter Include="gen\blink\modules\encoding">
       <UniqueIdentifier>{8f624ab1-aff2-44d1-8984-925dad9d34ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="base\json">
+      <UniqueIdentifier>{eff48a8a-975d-4ba6-ab6b-587d7121c3aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="content\devtools">
+      <UniqueIdentifier>{d2150acd-b355-4c81-94b0-facc94951677}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="content\ui">
+      <UniqueIdentifier>{efa4bf61-db8a-4a86-88fc-77ce65f3d575}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\gen\blink\modules\EventModules.cpp">
@@ -1929,9 +1938,6 @@
     <ClCompile Include="..\..\content\browser\PlatformEventHandler.cpp">
       <Filter>content\browser</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\content\browser\PopupMenuWin.cpp">
-      <Filter>content\browser</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\content\resources\pickerButtonCss.cpp">
       <Filter>content\resources</Filter>
     </ClCompile>
@@ -2313,6 +2319,81 @@
     </ClCompile>
     <ClCompile Include="..\..\base\WindowsVersion.cpp">
       <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\base\json\json_parser.cc">
+      <Filter>base\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\base\json\json_reader.cc">
+      <Filter>base\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\base\json\json_util.cc">
+      <Filter>base\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\base\json\json_writer.cc">
+      <Filter>base\json</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\devtools\DevToolsAgent.cpp">
+      <Filter>content\devtools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\devtools\DevToolsClient.cpp">
+      <Filter>content\devtools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\devtools\DevToolsMgr.cpp">
+      <Filter>content\devtools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\devtools\DevToolsProtocolDispatcher.cpp">
+      <Filter>content\devtools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\resources\DebuggerScriptSourceJs.cpp">
+      <Filter>content\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\resources\InjectedScriptSourceJs.cpp">
+      <Filter>content\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\resources\InspectorOverlayPageHtml.cpp">
+      <Filter>content\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\blink\bindings\core\v8\V8DevToolsHost.cpp">
+      <Filter>gen\blink\bindings\core\v8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\blink\bindings\core\v8\V8InspectorOverlayHost.cpp">
+      <Filter>gen\blink\bindings\core\v8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\blink\bindings\modules\v8\V8DevToolsHostPartial.cpp">
+      <Filter>gen\blink\bindings\modules\v8</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\blink\core\InspectorBackendDispatcher.cpp">
+      <Filter>gen\blink\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\blink\core\InspectorFrontend.cpp">
+      <Filter>gen\blink\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\blink\core\InspectorInstrumentationImpl.cpp">
+      <Filter>gen\blink\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\blink\core\InspectorTypeBuilder.cpp">
+      <Filter>gen\blink\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\base\strings\string_piece.cc">
+      <Filter>base\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\ui\ClipboardUtil.cpp">
+      <Filter>content\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\ui\DragHandle.cpp">
+      <Filter>content\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\ui\PopupMenuWin.cpp">
+      <Filter>content\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\ui\WCDataObject.cpp">
+      <Filter>content\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\content\ui\WebDropSource.cpp">
+      <Filter>content\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gen\blink\bindings\core\v8\V8XMLSerializer.cpp">
+      <Filter>gen\blink\bindings\core\v8</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -4326,9 +4407,6 @@
     <ClInclude Include="..\..\content\web_impl_win\WebMediaPlayerImpl.h">
       <Filter>content\web_impl_win</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\content\browser\PopupMenuWin.h">
-      <Filter>content\browser</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\content\browser\PlatformEventHandler.h">
       <Filter>content\browser</Filter>
     </ClInclude>
@@ -4620,6 +4698,72 @@
     </ClInclude>
     <ClInclude Include="..\..\base\WindowsVersion.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\base\json\json_parser.h">
+      <Filter>base\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\base\json\json_reader.h">
+      <Filter>base\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\base\json\json_util.h">
+      <Filter>base\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\base\json\json_writer.h">
+      <Filter>base\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\devtools\DevToolsAgent.h">
+      <Filter>content\devtools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\devtools\DevToolsClient.h">
+      <Filter>content\devtools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\devtools\DevToolsMgr.h">
+      <Filter>content\devtools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\devtools\DevToolsProtocolDispatcher.h">
+      <Filter>content\devtools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\blink\bindings\modules\v8\V8DevToolsHostPartial.h">
+      <Filter>gen\blink\bindings\modules\v8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\base\strings\string_piece.h">
+      <Filter>base\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\ui\ClipboardUtil.h">
+      <Filter>content\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\ui\COMPtr.h">
+      <Filter>content\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\ui\ContextMeun.h">
+      <Filter>content\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\ui\DragHandle.h">
+      <Filter>content\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\ui\PlatformCursor.h">
+      <Filter>content\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\ui\PopupMenuWin.h">
+      <Filter>content\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\ui\PopupMenuWinClient.h">
+      <Filter>content\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\ui\RunFileChooserImpl.h">
+      <Filter>content\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\ui\ToolTip.h">
+      <Filter>content\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\ui\WCDataObject.h">
+      <Filter>content\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\ui\WebDropSource.h">
+      <Filter>content\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gen\blink\bindings\core\v8\V8XMLSerializer.h">
+      <Filter>gen\blink\bindings\core\v8</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -430,14 +430,20 @@
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\CustomElementBinding.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\CustomElementConstructorBuilder.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\custom\V8CustomEventCustom.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\custom\V8DevToolsHostCustom.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\custom\V8DocumentCustom.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\custom\V8HTMLOptionsCollectionCustom.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\custom\V8HTMLPlugInElementCustom.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\custom\V8MutationObserverCustom.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\inspector\InspectorWrapper.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\inspector\V8InjectedScriptHost.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\inspector\V8JavaScriptCallFrame.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\npruntime.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\NPV8Object.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\OnStackObjectChecker.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\RejectedPromises.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ScriptHeapSnapshot.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ScriptProfiler.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ScriptSourceCode.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ScriptValueSerializer.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\SerializedScriptValue.cpp" />
@@ -530,7 +536,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\CustomElementConstructorBuilder.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\inspector\InspectorWrapper.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\inspector\V8InjectedScriptHost.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\inspector\V8JavaScriptCallFrame.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\OnStackObjectChecker.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ScriptHeapSnapshot.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ScriptProfiler.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ScriptSourceCode.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ScriptValueSerializer.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\bindings\core\v8\ToV8.h" />

@@ -138,9 +138,6 @@
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\PageWidgetDelegate.cpp">
       <Filter>web</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDevToolsAgentImplNone.cpp">
-      <Filter>web</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\WebSerializedScriptValue.cpp">
       <Filter>web</Filter>
     </ClCompile>
@@ -163,9 +160,6 @@
       <Filter>web</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\CompositionUnderlineVectorBuilder.cpp">
-      <Filter>web</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\InspectorOverlayImplNone.cpp">
       <Filter>web</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\PageOverlay.cpp">
@@ -247,6 +241,18 @@
       <Filter>web</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\config.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\InspectorOverlayImpl.cpp">
+      <Filter>web</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDevToolsAgentImpl.cpp">
+      <Filter>web</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\InspectorRenderingAgent.cpp">
+      <Filter>web</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDevToolsFrontendImpl.cpp">
+      <Filter>web</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\WebViewImpl.h">
@@ -394,5 +400,17 @@
       <Filter>web</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\config.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\InspectorOverlayImpl.h">
+      <Filter>web</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDevToolsAgentImpl.h">
+      <Filter>web</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\InspectorRenderingAgent.h">
+      <Filter>web</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\web\WebDevToolsFrontendImpl.h">
+      <Filter>web</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

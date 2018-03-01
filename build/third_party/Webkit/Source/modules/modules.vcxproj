@@ -469,6 +469,8 @@
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\fetch\Request.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\fetch\RequestInit.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\fetch\Response.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\filesystem\DevToolsHostFileSystem.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\filesystem\DOMFilePath.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\InitModules.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\navigatorcontentutils\NavigatorContentUtils.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\plugins\DOMMimeType.cpp" />
@@ -541,6 +543,8 @@
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\fetch\RequestInit.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\fetch\Response.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\fetch\ResponseInit.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\filesystem\DevToolsHostFileSystem.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\filesystem\DOMFilePath.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\InitModules.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\navigatorcontentutils\NavigatorContentUtils.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\navigatorcontentutils\NavigatorContentUtilsClient.h" />
