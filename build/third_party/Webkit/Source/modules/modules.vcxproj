@@ -450,6 +450,8 @@
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\compositorworker\CompositorWorkerManager.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\compositorworker\CompositorWorkerMessagingProxy.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\compositorworker\CompositorWorkerThread.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\crypto\DOMWindowCrypto.cpp" />
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\crypto\ModulesCrypto.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\encoding\Encoding.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\encoding\TextDecoder.cpp" />
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\encoding\TextEncoder.cpp" />
@@ -522,6 +524,7 @@
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\compositorworker\CompositorWorkerManager.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\compositorworker\CompositorWorkerMessagingProxy.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\compositorworker\CompositorWorkerThread.h" />
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\crypto\DOMWindowCrypto.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\encoding\Encoding.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\encoding\TextDecoder.h" />
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\encoding\TextEncoder.h" />

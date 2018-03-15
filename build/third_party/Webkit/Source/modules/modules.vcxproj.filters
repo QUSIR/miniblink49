@@ -37,6 +37,9 @@
     <Filter Include="modules\filesystem">
       <UniqueIdentifier>{79488536-8908-4c2b-9a12-db10fd91e2c2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="modules\crypto">
+      <UniqueIdentifier>{0c3b952a-5094-4735-9662-320bb19df081}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\canvas2d\CanvasStyle.cpp">
@@ -246,6 +249,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\filesystem\DOMFilePath.cpp">
       <Filter>modules\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\crypto\DOMWindowCrypto.cpp">
+      <Filter>modules\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\modules\crypto\ModulesCrypto.cpp">
+      <Filter>modules\crypto</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -480,6 +489,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\filesystem\DOMFilePath.h">
       <Filter>modules\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\third_party\WebKit\Source\modules\crypto\DOMWindowCrypto.h">
+      <Filter>modules\crypto</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

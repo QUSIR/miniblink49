@@ -630,6 +630,7 @@
     <ClCompile Include="..\..\gen\blink\bindings\core\v8\V8EventSource.cpp" />
     <ClCompile Include="..\..\gen\blink\bindings\core\v8\V8EventSourceInit.cpp" />
     <ClCompile Include="..\..\gen\blink\bindings\core\v8\V8EventTarget.cpp" />
+    <ClCompile Include="..\..\gen\blink\bindings\core\v8\V8External.cpp" />
     <ClCompile Include="..\..\gen\blink\bindings\core\v8\V8File.cpp" />
     <ClCompile Include="..\..\gen\blink\bindings\core\v8\V8FileError.cpp" />
     <ClCompile Include="..\..\gen\blink\bindings\core\v8\V8FileList.cpp" />
@@ -1003,6 +1004,7 @@
     <ClCompile Include="..\..\gen\blink\bindings\modules\v8\V8CloseEventInit.cpp" />
     <ClCompile Include="..\..\gen\blink\bindings\modules\v8\V8CompositorWorker.cpp" />
     <ClCompile Include="..\..\gen\blink\bindings\modules\v8\V8CompositorWorkerGlobalScope.cpp" />
+    <ClCompile Include="..\..\gen\blink\bindings\modules\v8\V8Crypto.cpp" />
     <ClCompile Include="..\..\gen\blink\bindings\modules\v8\V8DedicatedWorkerGlobalScopePartial.cpp" />
     <ClCompile Include="..\..\gen\blink\bindings\modules\v8\V8DeprecatedStorageInfo.cpp" />
     <ClCompile Include="..\..\gen\blink\bindings\modules\v8\V8DeprecatedStorageQuota.cpp" />
@@ -1157,6 +1159,7 @@
     <ClCompile Include="..\..\net\websocket\WebSocketHandshake.cpp" />
     <ClCompile Include="..\..\net\websocket\WebSocketOneFrame.cpp" />
     <ClCompile Include="..\..\net\WebURLLoaderManager.cpp" />
+    <ClCompile Include="..\..\net\WebURLLoaderManagerUtil.cpp" />
     <ClCompile Include="..\..\skia\ext\analysis_canvas.cc" />
     <ClCompile Include="..\..\skia\ext\bitmap_platform_device_win.cc" />
     <ClCompile Include="..\..\skia\ext\fontmgr_default_win.cc" />
@@ -1375,6 +1378,7 @@
     <ClInclude Include="..\..\gen\blink\bindings\core\v8\V8EventSource.h" />
     <ClInclude Include="..\..\gen\blink\bindings\core\v8\V8EventSourceInit.h" />
     <ClInclude Include="..\..\gen\blink\bindings\core\v8\V8EventTarget.h" />
+    <ClInclude Include="..\..\gen\blink\bindings\core\v8\V8External.h" />
     <ClInclude Include="..\..\gen\blink\bindings\core\v8\V8File.h" />
     <ClInclude Include="..\..\gen\blink\bindings\core\v8\V8FileError.h" />
     <ClInclude Include="..\..\gen\blink\bindings\core\v8\V8FileList.h" />
@@ -1754,6 +1758,7 @@
     <ClInclude Include="..\..\gen\blink\bindings\modules\v8\V8CloseEventInit.h" />
     <ClInclude Include="..\..\gen\blink\bindings\modules\v8\V8CompositorWorker.h" />
     <ClInclude Include="..\..\gen\blink\bindings\modules\v8\V8CompositorWorkerGlobalScope.h" />
+    <ClInclude Include="..\..\gen\blink\bindings\modules\v8\V8Crypto.h" />
     <ClInclude Include="..\..\gen\blink\bindings\modules\v8\V8DedicatedWorkerGlobalScopePartial.h" />
     <ClInclude Include="..\..\gen\blink\bindings\modules\v8\V8DeprecatedStorageInfo.h" />
     <ClInclude Include="..\..\gen\blink\bindings\modules\v8\V8DeprecatedStorageQuota.h" />
@@ -1933,6 +1938,7 @@
     <ClInclude Include="..\..\net\websocket\WebSocketOneFrame.h" />
     <ClInclude Include="..\..\net\WebURLLoaderInternal.h" />
     <ClInclude Include="..\..\net\WebURLLoaderManager.h" />
+    <ClInclude Include="..\..\net\WebURLLoaderManagerUtil.h" />
     <ClInclude Include="..\..\skia\config\SkUserConfig.h" />
     <ClInclude Include="..\..\skia\config\sk_ref_cnt_ext_debug.h" />
     <ClInclude Include="..\..\skia\config\sk_ref_cnt_ext_release.h" />
