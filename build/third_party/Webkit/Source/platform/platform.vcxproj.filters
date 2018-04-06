@@ -1134,9 +1134,6 @@
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\image-decoders\FastSharedBufferReader.cpp">
       <Filter>platform\image-decoders</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\exported\WebContentDecryptionModuleResultEmpty.cpp">
-      <Filter>platform\exported</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\third_party\WebKit\Source\platform\fonts\opentype\OpenTypeSanitizer.cpp">
       <Filter>platform\fonts\opentype</Filter>
     </ClCompile>

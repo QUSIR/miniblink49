@@ -533,6 +533,7 @@
     <ClCompile Include="..\..\content\web_impl_win\WebBlobRegistryImpl.cpp" />
     <ClCompile Include="..\..\content\web_impl_win\WebClipboardImpl.cpp" />
     <ClCompile Include="..\..\content\web_impl_win\WebCookieJarCurlImpl.cpp" />
+    <ClCompile Include="..\..\content\web_impl_win\WebCryptoImpl.cpp" />
     <ClCompile Include="..\..\content\web_impl_win\WebFileUtilitiesImpl.cpp" />
     <ClCompile Include="..\..\content\web_impl_win\WebMediaPlayerImpl.cpp" />
     <ClCompile Include="..\..\content\web_impl_win\WebMessagePortChannelImpl.cpp" />
@@ -1279,6 +1280,7 @@
     <ClInclude Include="..\..\content\web_impl_win\WebClipboardImpl.h" />
     <ClInclude Include="..\..\content\web_impl_win\WebCookieJarCurlImpl.h" />
     <ClInclude Include="..\..\content\web_impl_win\WebCookieJarINetImpl.h" />
+    <ClInclude Include="..\..\content\web_impl_win\WebCryptoImpl.h" />
     <ClInclude Include="..\..\content\web_impl_win\WebFileUtilitiesImpl.h" />
     <ClInclude Include="..\..\content\web_impl_win\WebMediaPlayerImpl.h" />
     <ClInclude Include="..\..\content\web_impl_win\WebMessagePortChannelImpl.h" />

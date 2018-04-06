@@ -2404,6 +2404,9 @@
     <ClCompile Include="..\..\net\WebURLLoaderManagerUtil.cpp">
       <Filter>net</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\content\web_impl_win\WebCryptoImpl.cpp">
+      <Filter>content\web_impl_win</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\gen\blink\modules\ServiceWorkerGlobalScopeCoreConstructors.h">
@@ -4782,6 +4785,9 @@
     </ClInclude>
     <ClInclude Include="..\..\net\WebURLLoaderManagerUtil.h">
       <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\content\web_impl_win\WebCryptoImpl.h">
+      <Filter>content\web_impl_win</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
